@@ -1,6 +1,5 @@
 package com.example.its.web.issue;
 
-import com.example.its.domain.issue.IssueEntity;
 import com.example.its.domain.issue.IssueService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -42,8 +41,7 @@ public class IssueController {
 
     @GetMapping("/{issueId}")
     public String showDetail(@PathVariable("issueId") long issueId, Model model) {
-        var dummyEntity = new IssueEntity(1, "概要", "説明");
-        model.addAttribute("issue", dummyEntity);
+        model.addAttribute("issue", issueService.findById(issueId));
         return "issues/detail";
     }
 }
