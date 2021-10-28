@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>課題作成 | 課題管理アプリケーション</title>
 </head>
 <body>
 <h1>課題作成</h1>
-<form>
+<form action="#" th:action="@{/issues}" th:method="post">
     <div>
         <label for="summaryInput">概要</label>
         <input type="text" id="summaryInput">
