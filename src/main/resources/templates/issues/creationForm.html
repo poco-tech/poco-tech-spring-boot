@@ -6,14 +6,14 @@
 </head>
 <body>
 <h1>課題作成</h1>
-<form action="#" th:action="@{/issues}" th:method="post">
+<form action="#" th:action="@{/issues}" th:method="post" th:object="${issueForm}">
     <div>
         <label for="summaryInput">概要</label>
-        <input type="text" id="summaryInput">
+        <input type="text" id="summaryInput" th:field="*{summary}">
     </div>
     <div>
         <label for="descriptionInput">説明</label>
-        <textarea id="descriptionInput" row="10"></textarea>
+        <textarea id="descriptionInput" row="10" th:field="*{description}"></textarea>
     </div>
     <div>
         <button type="submit">作成</button>
