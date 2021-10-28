@@ -1,7 +1,10 @@
 package com.example.its.domain.issue;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
 public class IssueService {
 
     public List<IssueEntity> findAll() {
