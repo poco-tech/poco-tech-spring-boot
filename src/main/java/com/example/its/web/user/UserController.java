@@ -7,8 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Collections;
-
 @Controller
 @RequestMapping("/users")
 @RequiredArgsConstructor
@@ -22,4 +20,8 @@ public class UserController {
         return "users/list";
     }
 
+    @GetMapping("/creationForm")
+    public String showCreationForm() {
+        return "users/creationForm";
+    }
 }
