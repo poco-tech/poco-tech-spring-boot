@@ -10,11 +10,15 @@
 <form action="#" th:action="@{/users}" method="post" th:object="${userForm}">
     <div class="mt-3">
         <label for="usernameInput" class="form-label">ユーザー名</label>
-        <input type="text" id="usernameInput" class="form-control" th:field="*{username}">
+        <input type="text" id="usernameInput" class="form-control" th:field="*{username}"
+               th:classappend="${#fields.hasErrors('username')} ? is-invalid">
+        <p class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">(errors)</p>
     </div>
     <div class="mt-3">
         <label for="passwordInput" class="form-label">パスワード</label>
-        <input type="password" id="passwordInput" class="form-control" th:field="*{password}">
+        <input type="password" id="passwordInput" class="form-control" th:field="*{password}"
+               th:classappend="${#fields.hasErrors('password')} ? is-invalid">
+        <p class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">(errors)</p>
     </div>
     <div class="mt-3">
         <button type="submit" class="btn btn-primary">作成</button>
