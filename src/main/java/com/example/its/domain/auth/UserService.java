@@ -14,4 +14,8 @@ public class UserService {
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+    public void create(String username, String password) {
+        userRepository.insert(username, password);
+    }
 }
