@@ -21,6 +21,19 @@
         <p class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">(errors)</p>
     </div>
     <div class="mt-3">
+        <label class="form-label" for="authorityRadio">権限</label>
+        <div id="authorityRadio">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="authorityAdminRadio" name="authority" value="ADMIN">
+                <label class="form-check-label" for="authorityAdminRadio">ADMIN</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="authorityUserRadio" name="authority" value="USER">
+                <label class="form-check-label" for="authorityUserRadio">USER</label>
+            </div>
+        </div>
+    </div>
+    <div class="mt-3">
         <button type="submit" class="btn btn-primary">作成</button>
         <a href="./list.html" th:href="@{/users}" class="btn btn-secondary">キャンセル</a>
     </div>
