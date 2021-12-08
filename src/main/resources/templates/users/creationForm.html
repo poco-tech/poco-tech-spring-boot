@@ -23,14 +23,20 @@
     <div class="mt-3">
         <label class="form-label" for="authorityRadio">権限</label>
         <div id="authorityRadio">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="authorityAdminRadio" th:field="*{authority}" value="ADMIN">
+            <div class="form-check" th:classappend="${#fields.hasErrors('authority')} ? is-invalid">
+                <input class="form-check-input" type="radio" id="authorityAdminRadio"
+                       th:field="*{authority}" value="ADMIN"
+                       th:classappend="${#fields.hasErrors('authority')} ? is-invalid">
                 <label class="form-check-label" for="authorityAdminRadio">ADMIN</label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="authorityUserRadio" th:field="*{authority}" value="USER">
+            <div class="form-check" th:classappend="${#fields.hasErrors('authority')} ? is-invalid">
+                <input class="form-check-input" type="radio" id="authorityUserRadio"
+                       th:field="*{authority}" value="USER"
+                       th:classappend="${#fields.hasErrors('authority')} ? is-invalid">
                 <label class="form-check-label" for="authorityUserRadio">USER</label>
             </div>
+            <p class="invalid-feedback" th:if="${#fields.hasErrors('authority')}"
+               th:errors="*{authority}">(errors)</p>
         </div>
     </div>
     <div class="mt-3">
