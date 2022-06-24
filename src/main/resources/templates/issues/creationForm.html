@@ -15,7 +15,7 @@
     </div>
     <div class="mt-3">
         <label for="descriptionInput" class="form-label">説明</label>
-        <textarea id="descriptionInput" row="10" th:field="*{description}" class="form-control"
+        <textarea id="descriptionInput" rows="10" th:field="*{description}" class="form-control"
                   th:classappend="${#fields.hasErrors('description')} ? is-invalid"></textarea>
         <p class="invalid-feedback" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">(error)</p>
     </div>
